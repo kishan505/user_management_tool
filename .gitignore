@@ -5,4 +5,10 @@ __pycache__
 db.sqlite3
 media
 
+.env
+
 venv/
+
+swagger-codegen-cli.jar
+
+swagger_codegen/

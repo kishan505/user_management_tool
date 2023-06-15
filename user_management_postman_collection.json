@@ -36,7 +36,8 @@
 					]
 				},
 				"url": {
-					"raw": "127.0.0.1:8000/sign_up",
+					"raw": "http://127.0.0.1:8000/sign_up",
+					"protocol": "http",
 					"host": [
 						"127",
 						"0",
@@ -72,7 +73,8 @@
 					]
 				},
 				"url": {
-					"raw": "127.0.0.1:8000/login",
+					"raw": "http://127.0.0.1:8000/login",
+					"protocol": "http",
 					"host": [
 						"127",
 						"0",
@@ -115,10 +117,16 @@
 							"value": "aws architech",
 							"type": "default"
 						}
-					]
+					],
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
 				},
 				"url": {
-					"raw": "127.0.0.1:8000/create_user_profile",
+					"raw": "http://127.0.0.1:8000/create_user_profile",
+					"protocol": "http",
 					"host": [
 						"127",
 						"0",

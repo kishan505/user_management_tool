@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import UserSignUpView, UserLoginView ,UserProfileView
-# from django.views.decorators.csrf import csrf_exempt
+from .views import user_sign_up, user_login ,create_user_profile
 
 urlpatterns = [
-    path('sign_up', UserSignUpView.as_view()),
-    path('login', UserLoginView.as_view()),
-    path('create_user_profile', UserProfileView.as_view(), name="create_user_profile"),
+    path('sign_up', user_sign_up, name='sign_up'),
+    path('login', user_login, name="login"),
+    path('create_user_profile', create_user_profile, name="create_user_profile"),
 ]

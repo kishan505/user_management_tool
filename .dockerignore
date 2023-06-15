@@ -1,0 +1,23 @@
+# Ignore development and testing files
+.git
+.gitignore
+.env
+.env.*
+*.pyc
+*.pyo
+
+# Ignore user uploads
+media
+
+# Ignore static files
+static
+
+# Ignore database files
+db.sqlite3
+
+# Ignore Docker-related files
+Dockerfile
+.dockerignore
+
+# Ignore virtual environment files
+venv

@@ -1,0 +1,85 @@
+openapi: 3.0.0
+info:
+  title: user_management
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /sign_up:
+    post:
+      tags:
+        - default
+      summary: sign_up
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: axay
+                email:
+                  type: string
+                  example: axay@gmail.com
+                password:
+                  type: string
+                  example: axay123
+                confirm_password:
+                  type: string
+                  example: axay123
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /login:
+    post:
+      tags:
+        - default
+      summary: login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: axay
+                password:
+                  type: integer
+                  example: '123456'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /create_user_profile:
+    post:
+      tags:
+        - default
+      summary: create_user_profile
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  example: '3'
+                profile_photo:
+                  type: string
+                  format: binary
+                location:
+                  type: string
+                  example: ahemdabad
+                designation:
+                  type: string
+                  example: aws architech
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

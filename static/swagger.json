@@ -1,0 +1,144 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "user_management",
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "http://127.0.0.1:8000"
+  } ],
+  "paths" : {
+    "/sign_up" : {
+      "post" : {
+        "tags" : [ "default" ],
+        "summary" : "sign_up",
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/sign_up_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      }
+    },
+    "/login" : {
+      "post" : {
+        "tags" : [ "default" ],
+        "summary" : "login",
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/login_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      }
+    },
+    "/create_user_profile" : {
+      "post" : {
+        "tags" : [ "default" ],
+        "summary" : "create_user_profile",
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/create_user_profile_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful response",
+            "content" : {
+              "application/json" : { }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "sign_up_body" : {
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "confirm_password" : {
+            "type" : "string"
+          }
+        },
+        "required": [
+					"username",
+          "email",
+          "password",
+          "confirm_password"
+				] 
+      },
+      "login_body" : {
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "integer"
+          }
+        },
+        "required": [
+					"username",
+          "password"
+				]         
+      },
+      "create_user_profile_body" : {
+        "type" : "object",
+        "properties" : {
+          "user_id" : {
+            "type" : "integer"
+          },
+          "profile_photo" : {
+            "type" : "string",
+            "format" : "binary"
+          },
+          "location" : {
+            "type" : "string"
+          },
+          "designation" : {
+            "type" : "string"
+          }
+        },
+        "required": [
+					"user_id"
+				]
+      }
+    }
+  }
+}
